@@ -5,3 +5,21 @@
 C output - тоже будет работать. 
 
 меняем @ton/core  на ton-core в файлах с build и output (мастера и кошелька)
+
+
+
+{
+  "url": "https://Ospamox.github.io/twa-template/",
+  "name": "My TWA",
+  "iconUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZj-DMMnqn9g6BhKeZ4gVtiu7U6Xv9maoxQ&usqp=CAU"
+}
+
+
+{
+  "url": "https://Ospamox.github.io/twa-template/",
+  "name": "My TWA",
+  "iconUrl": "https://raw.githubusercontent.com/Ospamox/twa-template/main/images.png"
+  
+}
+
+https://ospamox.github.io/twa-template/
