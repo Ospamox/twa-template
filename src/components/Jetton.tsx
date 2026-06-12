@@ -100,7 +100,7 @@ export function Jetton() {
       <FlexBoxCol>
       <h3
         style={{
-          fontSize: "18px",
+          fontSize: "20px",
           color: "#00d4ff",
           fontFamily: '"Comic Sans MS", cursive'
         }}

@@ -1163,7 +1163,7 @@ Values:
   @media (prefers-color-scheme: dark) {
     border: 1px solid #fefefe;
   }
-`;function nQ(){const{connected:e,wallet:t}=wf(),{mint:r}=XV();return Qk(),Un(rQ,{title:"Jetton",children:yv(wM,{children:[Un("h3",{style:{fontSize:"18px",color:"#00d4ff",fontFamily:'"Comic Sans MS", cursive'},children:"USDM token rewards for random Kokoronoki participants from our partners Monetrix. 🚀Airdrop: 100 USDMt tokens. Tokens will be credited to your TON wallet after two 0.1 Token transactions. Exchange rate: USDMt = USDM 💰💰💰"}),Un(bM,{style:{justifyContent:"center"},children:Un("img",{src:"/twa-template/refer.gif"})}),Un(_M,{disabled:!e,onClick:r,children:"Get USDMt"})]})})}const iQ=Ta.div`
+`;function nQ(){const{connected:e,wallet:t}=wf(),{mint:r}=XV();return Qk(),Un(rQ,{title:"Jetton",children:yv(wM,{children:[Un("h3",{style:{fontSize:"20px",color:"#00d4ff",fontFamily:'"Comic Sans MS", cursive'},children:"USDM token rewards for random Kokoronoki participants from our partners Monetrix. 🚀Airdrop: 100 USDMt tokens. Tokens will be credited to your TON wallet after two 0.1 Token transactions. Exchange rate: USDMt = USDM 💰💰💰"}),Un(bM,{style:{justifyContent:"center"},children:Un("img",{src:"/twa-template/refer.gif"})}),Un(_M,{disabled:!e,onClick:r,children:"Get USDMt"})]})})}const iQ=Ta.div`
   background-color: #e8e8e8;
   color: black;
 
