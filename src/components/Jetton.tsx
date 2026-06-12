@@ -129,7 +129,8 @@ export function Jetton() {
         </FlexBoxRow> */}
 
         <FlexBoxRow style={{ justifyContent: "center" }}>
-           <img src="/refer.gif" alt="TON animation" width="200" /> 
+           {/* <img src="/refer.gif" alt="TON animation" width="200" />  */}
+           <img src={`${import.meta.env.BASE_URL}refer.gif`} />
         </FlexBoxRow>
         
        
