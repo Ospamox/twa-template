@@ -123,10 +123,10 @@ export function Jetton() {
           <div>{balance ?? "Loading..."}</div>
         </FlexBoxRow> */}
 
-        <FlexBoxRow>
+        {/* <FlexBoxRow>
           TON Balance
           <div>{tonBalance ?? "Loading..."}</div>
-        </FlexBoxRow>
+        </FlexBoxRow> */}
 
         <FlexBoxRow style={{ justifyContent: "center" }}>
            <img src="/refer.gif" alt="TON animation" width="200" /> 
