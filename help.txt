@@ -10,12 +10,20 @@ C output - тоже будет работать.
 **********************************
 Для сборки проекта и пуша на гитхаб следущее:
 Это уже если видоизменяем проект. А так изначально https://www.youtube.com/watch?v=xxVHjPJ8mUE
+
+//дозалив docs
 npm run build
 попадет в dist
-cp -r dist docs - создаем папку и копируем с dist в docs
+создаем папку docs и копируем с dist в docs
 Комитим
 git add docs
 git commit -m "Deploy GitHub Pages"
+git push
+
+//перезалив всего проекта
+npm run build
+git add .
+git commit -m "fix pages"
 git push
 
 В настройке страницы Settings → Pages (Гитхаба)
