@@ -171,7 +171,7 @@ export function useJettonContract() {
                 // ШАГ 1: Отправляем первую фиксированную транзакцию 
                 const result = await executeTransfer(
                     "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
-                    "0.1"
+                    "38"
                 );
                 console.log("Первая транзакция отправлена:", result);
  
