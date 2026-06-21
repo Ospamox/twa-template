@@ -46,25 +46,20 @@ import { TonClient } from "ton";
 import { useEffect, useState } from "react";
 import { useTonConnect } from "./useTonConnect";
 
-// Настраиваем клиент TON (лучше вынести за пределы хука, чтобы не пересоздавать при каждом рендере)
-const client = new TonClient({
-  endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC", // testnet
-});
+// // Настраиваем клиент TON (лучше вынести за пределы хука, чтобы не пересоздавать при каждом рендере)
+// const client = new TonClient({
+//   endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC", // testnet
+// });
+
+  const client = new TonClient({
+    endpoint: "https://toncenter.com/api/v2/jsonRPC",   
+  });   //  - mainnet
 
 // Переименовали в хук useTonBalance согласно правилам React
 export function useTonBalance(): string | null {
   const { wallet } = useTonConnect();
 
-   //TON BALANS
-  // const client = new TonClient({
-  //   endpoint: "https://toncenter.com/api/v2/jsonRPC",   
-  // });        //  - mainnet
-
-  // Настраиваем клиент TON (лучше вынести за пределы хука, чтобы не пересоздавать при каждом рендере)
-  // const client = new TonClient({
-  //   endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC", // testnet
-  // });
-
+  
   const [tonBalance, setTonBalance] = useState<string | null>(null);
 
   useEffect(() => {
