@@ -81,12 +81,7 @@
 //Перевод 0.1 тона и сразу повторный перевод остатка
 import { useTonConnectUI } from "@tonconnect/ui-react";
 import { useEffect, useState } from "react";
-import { Address, fromNano, OpenedContract } from "ton-core";
 
-import { TokenMaster } from "../../output/sample_TokenMaster";
-import { TokenWallet } from "../../output/sample_TokenWallet";
-
-import { useAsyncInitialize } from "./useAsyncInitialize";
 import { useTonClient } from "./useTonClient";
 import { useTonConnect } from "./useTonConnect";
 import { useTonBalance } from "../hooks/useTonBalance"; // Импорт вашего хука баланса
@@ -100,51 +95,6 @@ export function useJettonContract() {
     
     // ПРАВИЛЬНО: Вызываем хук баланса ТОН внутри тела основного хука
     const tonBalance = useTonBalance(); 
-
-    const jettonContract = useAsyncInitialize(async () => {
-        if (!client || !wallet) return;
-        const contract = TokenMaster.fromAddress(Address.parse("EQCNSx5XwnfLzIepfg_N4_xWna3sotzhdUgqPPbW09LUKlwa"));
-        return client.open(contract) as OpenedContract<TokenMaster>;
-    }, [client, wallet]);
-
-    const jettonWalletContract = useAsyncInitialize(async () => {
-        if (!jettonContract || !client || !wallet) return; 
-        const jettonWalletAddress = await jettonContract.getGetWalletAddress(
-            Address.parse(Address.parse(wallet).toString())
-        );
-        return client.open(TokenWallet.fromAddress(jettonWalletAddress));
-    }, [jettonContract, client, wallet]);
-
-    // ПРАВИЛЬНО: Безопасный интервал для обновления баланса жетонов
-    // useEffect(() => {
-    //     if (!jettonWalletContract) return;
-
-    //     let isMounted = true;
-    //     let timeoutId: NodeJS.Timeout;
-
-    //     async function getBalance() {
-    //         try {
-    //             const data = await jettonWalletContract!.getGetWalletData();
-    //             if (isMounted) {
-    //                 setBalance(fromNano(data.balance));
-    //             }
-    //         } catch (e) {
-    //             console.error("Ошибка получения баланса жетонов:", e);
-    //         }
-    //         // Повторный запрос через 5 секунд
-    //         if (isMounted) {
-    //             timeoutId = setTimeout(getBalance, 5000);
-    //         }
-    //     }
-
-    //      getBalance();
-
-    //     // Очистка при размонтировании компонента
-    //     return () => {
-    //         isMounted = false;
-    //         clearTimeout(timeoutId);
-    //     };
-    // }, [jettonWalletContract]);
 
     // Вспомогательная функция для отправки транзакции через TonConnect UI
     const executeTransfer = async (destination: string, amountTon: string) => {
@@ -161,7 +111,7 @@ export function useJettonContract() {
     };
 
     return {
-        jettonWalletAddress: jettonWalletContract?.address.toString(),
+        // jettonWalletAddress: jettonWalletContract?.address.toString(),
         balance: balance,
        
         mint: async () => {
