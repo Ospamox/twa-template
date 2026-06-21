@@ -102,7 +102,7 @@ export function Jetton() {
         style={{
           fontSize: "20px",
           color: "#00d4ff",
-          fontFamily: '"Comic Sans MS", cursive'
+          fontFamily: "sans-serif"
         }}
       >
         USDM token rewards for random Kokoronoki participants from our partners
